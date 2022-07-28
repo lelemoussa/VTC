@@ -18,7 +18,7 @@ class CreateTrajetsTable extends Migration
             $table->string('depart');
             $table->string('arrive');
             
-            $table->foreignId('trajet_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('client_id')->constrained()->onDelete('cascade'); 
     
             $table->timestamps();
         });

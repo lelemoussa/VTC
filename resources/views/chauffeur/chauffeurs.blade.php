@@ -6,9 +6,7 @@
     <br>
     <div class = "container ">
     
-      <div class="d-flex justify-content-end" >
-      <a href="{{ route('chauffeur.create') }}" class="btn btn-warning">ajouter un nouveau chauffeur</a>
-      </div>
+      
 
       @if(session()->has("successDelete"))
 

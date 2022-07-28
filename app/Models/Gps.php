@@ -2,10 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Gps extends Model
 {
     use HasFactory;
+
+    protected $fillable =["latitude","longitude","client_id"];
+
+    public function client()
+    {
+       return $this->belongsTo(Client::class);
+    }
 }

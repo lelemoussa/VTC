@@ -18,7 +18,7 @@ class CreateGpsTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             
-            $table->foreignId('gps_id')->constrained()->onDelete('cascade');
+            $table->foreignId('client_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -11,8 +11,8 @@
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UN NOUVEAU CHAUFFEUR </h1>
-
+     <h3 align = "center" class=" bg titre-contact">  AJOUTER UN NOUVEAU CHAUFFEUR </h3>
+<br>
      <div class="panel panel-primary">
 
         @if(session()->has("success"))
@@ -41,44 +41,44 @@
 
                          <div class="form-group">
                          
-                             <label  class=" col-sm-4 control-label">NOM </label>
+                             <label  class=" col-sm-4 control-label">NOM</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nomch" id="nomch" >
+                                 <input type="text" class="form-control" name="nom" id="nom" >
                              </div>
                              <br>
                          </div>
                      
                          <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PRENOM </label>
+                             <label  class=" col-sm-4 control-label">PRENOM</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenomch" id="prenomch" >
+                                 <input type="text" class="form-control" name="prenom" id="prenom" >
                              </div>
                              <br>
                          </div>
 
                          <div class="form-group">
-                             <label  class=" col-sm-4 control-label">MATRICULE :</label>
+                             <label  class=" col-sm-4 control-label">MATRICULE</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="matriculech" id="matriculech"  >
+                                 <input type="text" class="form-control" name="matricule" id="matricule"  >
                              </div>
                              <br>
                          </div>
                          
                          <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PERMIS :</label>
+                             <label  class=" col-sm-4 control-label">PERMIS</label>
                              <div class="col-sm-8">
 
-                                 <input type="text" class="form-control" name="permisch" id="permisch"  >
+                                 <input type="text" class="form-control" name="permis" id="permis"  >
 
                            </div>
                            <br>
                          </div>
 
                          <div class="form-group">
-                             <label  class=" col-sm-4 control-label">TELEPHONE :</label>
+                             <label  class=" col-sm-4 control-label">TELEPHONE</label>
                              <div class="col-sm-8">
 
-                                 <input type="text" class="form-control" name="telch" id="telch"  >
+                                 <input type="text" class="form-control" name="telephone" id="telephone"  >
 
                            </div>
                            <br>

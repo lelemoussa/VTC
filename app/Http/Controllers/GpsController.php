@@ -41,9 +41,9 @@ class GpsController extends Controller
     {
          $request->validate([
 
-            'latitude' => ['required' ],
-            'longitude' => ['required' ],
-            'client_id' => ['required' ],
+            'latitude' => ['required' , 'numeric'],
+            'longitude' => ['required', 'numeric' ],
+            'client_id' => ['required' , 'integer'],
             
         ]);
 
@@ -54,7 +54,7 @@ class GpsController extends Controller
             
         ]);
         //gps::create($request->all());
-        return back()->with("success", "gps crée avec success");
+        return back()->with("success", "point gps crée avec success");
     }
 
     /**
@@ -92,9 +92,10 @@ class GpsController extends Controller
     {
         $request->validate([
 
-            'latitude' => ['required' ],
-            'longitude' => ['required' ],
-            'client_id' => ['required' ],
+            'latitude' => ['required' , 'numeric'],
+            'longitude' => ['required', 'numeric' ],
+            'client_id' => ['required' , 'integer'],
+            
             
         ]);
 
@@ -113,7 +114,7 @@ class GpsController extends Controller
             
             
         ]);
-        return back()->with("success", "gps mis a jour avec success");
+        return back()->with("success", "point gps mis a jour avec success");
     }
 
     /**
@@ -127,6 +128,6 @@ class GpsController extends Controller
         //$nom_complet = $gps->nom ." ". $gps->prenom;
         gps::find($gps)->delete();
         
-        return back()->with("successDelete","gps suprimé avec success");
+        return back()->with("successDelete","point gps suprimé avec success");
     }
 }

@@ -39,12 +39,12 @@ class ClientController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required' ],
-            'prenom' => ['required' ],
-            'telephone' => ['required','unique:clients' ],
-            'societe' => ['required' ],
+            'nom' => ['required' , 'string'],
+            'prenom' => ['required' , 'string'],
+            'telephone' => ['required','numeric','min:10','unique:clients' ],
+            'societe' => ['required' ,'string' ],
             'email' => ['required','email','unique:clients' ],
-            'civilite' => ['required' ],
+            'civilite' => ['required' ,'string' ],
 
         ]);
 
@@ -95,12 +95,12 @@ class ClientController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required' ],
-            'prenom' => ['required' ],
-            'telephone' => ['required' ],
-            'societe' => ['required' ],
+            'nom' => ['required' , 'string'],
+            'prenom' => ['required' , 'string'],
+            'telephone' => ['required','numeric','min:10' ],
+            'societe' => ['required' ,'string' ],
             'email' => ['required','email' ],
-            'civilite' => ['required' ],
+            'civilite' => ['required' ,'string' ],
 
         ]);
 
@@ -113,7 +113,7 @@ class ClientController extends Controller
         //     'civilite' => $request->civilite,
             
         // ]);
-        Client::create($request->all());
+        $client->update($request->all());
         return back()->with("success", "client mis a jour avec success");
     }
 

@@ -39,20 +39,20 @@ class ChauffeurController extends Controller
     {
         $request->validate([
 
-            'nomch' => ['required' ],
-            'prenomch' => ['required' ],
-            'matriculech' => ['required','unique:chauffeurs' ],
-            'permisch' => ['required','unique:chauffeurs' ],
-            'telch' => ['required','max:10','min:10','unique:chauffeurs' ],
+            'nom' => ['required', 'string'],
+            'prenom' => ['required','string' ],
+            'matricule' => ['required','unique:chauffeurs' ],
+            'permis' => ['required','unique:chauffeurs' ],
+            'telephone' => ['required','numeric','min:10','unique:chauffeurs' ],
 
         ]);
 
         chauffeur::create([
-            'nomch' => $request->nomch,
-            'prenomch' => $request->prenomch,
-            'matriculech' => $request->matriculech,
-            'permisch' => $request->permisch,
-            'telch' => $request->telch,
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'matricule' => $request->matricule,
+            'permis' => $request->permis,
+            'telephone' => $request->telephone,
             
         ]);
         return back()->with("success", "chauffeur crée avec success");
@@ -93,20 +93,20 @@ class ChauffeurController extends Controller
     {
         $request->validate([
 
-            'nomch' => ['required' ],
-            'prenomch' => ['required' ],
-            'matriculech' => ['required','unique:chauffeurs' ],
-            'permisch' => ['required','unique:chauffeurs' ],
-            'telch' => ['required','max:10','min:10','unique:chauffeurs' ],
+            'nom' => ['required', 'string'],
+            'prenom' => ['required','string'],
+            'matricule' => ['required'],
+            'permis' => ['required' ],
+            'telephone' => ['required','numeric','min:10'],
 
         ]);
 
         $chauffeur->update([
-            'nomch' => $request->nomch,
-            'prenomch' => $request->prenomch,
-            'matriculech' => $request->matriculech,
-            'permisch' => $request->permisch,
-            'telch' => $request->telch,
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'matricule' => $request->matricule,
+            'permis' => $request->permis,
+            'telephone' => $request->telephone,
             
         ]);
         return back()->with("success", "chauffeur mis a jour avec success");
@@ -121,7 +121,7 @@ class ChauffeurController extends Controller
      */
     public function destroy($chauffeur)
     {
-        //$nom_complet = $chauffeur->nomch ." ". $chauffeur->prenomch;
+        //$nom_complet = $chauffeur->nom ." ". $chauffeur->prenom;
         chauffeur::find($chauffeur)->delete();
         
         return back()->with("successDelete","chauffeur suprimé avec success");

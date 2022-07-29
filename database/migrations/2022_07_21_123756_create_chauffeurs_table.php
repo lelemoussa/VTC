@@ -15,11 +15,11 @@ class CreateChauffeursTable extends Migration
     {
         Schema::create('chauffeurs', function (Blueprint $table) {
             $table->id();
-            $table->text('nomch');
-            $table->text('prenomch');
-            $table->string('matriculech');
-            $table->string('permisch');
-            $table->text('telch');
+            $table->text('nom');
+            $table->text('prenom');
+            $table->string('matricule');
+            $table->string('permis');
+            $table->text('telephone');
             $table->timestamps();
         });
     }

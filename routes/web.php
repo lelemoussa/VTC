@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\vtcontroller;
 use App\Http\Controllers\GpsController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\PassagerController;
@@ -65,6 +66,7 @@ Route::resource("gps",GpsController::class);
 // route::put("/gps/{gps}" ,[GpsController::class, 'update'])->name("gps.update");
 
 
-// Route::post('/chauffeur/create', [vtcontroller::class, 'store'])->name('chauffeur.store');
-// route::get('/voiture' ,[vtcontroller::class, 'voiture'])->name('voiture');
-// Route::post('/voiture/create', [vtcontroller::class, 'store'])->name('voiture.store');
+//route pour les courses
+Route::resource("course",CourseController::class);
+
+

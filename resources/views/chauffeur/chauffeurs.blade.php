@@ -32,11 +32,11 @@
   @foreach($chauffeurs as $chauffeur)
     <tr>
       <th scope="row">{{ $loop->index +1 }}</th>
-      <td>{{ $chauffeur->nomch }}</td>
-      <td>{{ $chauffeur->prenomch }}</td>
-      <td>{{ $chauffeur->matriculech }}</td>
-      <td>{{ $chauffeur->permisch }}</td>
-      <td>{{ $chauffeur->telch }}</td>
+      <td>{{ $chauffeur->nom }}</td>
+      <td>{{ $chauffeur->prenom }}</td>
+      <td>{{ $chauffeur->matricule }}</td>
+      <td>{{ $chauffeur->permis }}</td>
+      <td>{{ $chauffeur->telephone }}</td>
       <td>
         <a href="{{ route('chauffeur.edit', ['chauffeur'=>$chauffeur]) }}" class="btn btn-warning">editer</a>
         <a href="#" class="btn btn-danger" onclick="if(confirm('voulez vous vraiment suprimer cet chauffeur?')){document.getElementById('form-{{$chauffeur->id}}').submit() }">suprimer</a>

@@ -41,12 +41,12 @@ class PassagerController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required' ],
-            'prenom' => ['required' ],
-            'telephone' => ['required' ],
-            'societe' => ['required' ],
-            'email' => ['required' ],
-            'civilite' => ['required' ],
+            'nom' => ['required' , 'string'],
+            'prenom' => ['required' , 'string'],
+            'telephone' => ['required','numeric','min:10','unique:clients' ],
+            'societe' => ['required' ,'string' ],
+            'email' => ['required','email','unique:clients' ],
+            'civilite' => ['required' ,'string' ],
             'client_id' => ['required' ],
             
         ]);
@@ -100,12 +100,12 @@ class PassagerController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required' ],
-            'prenom' => ['required' ],
-            'telephone' => ['required' ],
-            'societe' => ['required' ],
-            'email' => ['required' ],
-            'civilite' => ['required' ],
+            'nom' => ['required' , 'string'],
+            'prenom' => ['required' , 'string'],
+            'telephone' => ['required','numeric','min:10' ],
+            'societe' => ['required' ,'string' ],
+            'email' => ['required','email' ],
+            'civilite' => ['required' ,'string' ],
             'client_id' => ['required' ],
             
         ]);

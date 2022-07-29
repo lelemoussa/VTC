@@ -39,13 +39,13 @@ class voitureController extends Controller
     {
         $request->validate([
 
-            'marque' => ['required' ],
-            'immatriculation' => ['required' ,'unique:voitures' ],
-            'place' => ['required'],
-            'description' => ['required' ],
-            'modele' => ['required'],
-            'annee' => ['required'],
-            'couleur' => ['required' ],
+            'marque' => ['required', 'string' ],
+            'immatriculation' => ['required', 'string' ,'unique:voitures' ],
+            'place' => ['required', 'integer'],
+            'description' => ['required' , 'string'],
+            'modele' => ['required', 'string'],
+            'annee' => ['required', 'integer'],
+            'couleur' => ['required', 'string' ],
 
 
         ]);
@@ -101,13 +101,14 @@ class voitureController extends Controller
     {
         $request->validate([
 
-            'marque' => ['required' ],
-            'immatriculation' => ['required' ,'unique:voitures' ],
-            'place' => ['required'],
-            'description' => ['required' ],
-            'modele' => ['required'],
-            'annee' => ['required'],
-            'couleur' => ['required' ],
+            'marque' => ['required', 'string' ],
+            'immatriculation' => ['required', 'string'  ],
+            'place' => ['required', 'integer'],
+            'description' => ['required' , 'string'],
+            'modele' => ['required', 'string'],
+            'annee' => ['required', 'integer'],
+            'couleur' => ['required', 'string' ],
+
 
 
         ]);

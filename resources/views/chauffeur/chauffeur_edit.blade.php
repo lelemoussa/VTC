@@ -43,7 +43,7 @@
                          
                              <label  class=" col-sm-4 control-label">NOM </label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nomch" id="nomch" value="{{$chauffeur->nomch}}">
+                                 <input type="text" class="form-control" name="nom" id="nom" value="{{$chauffeur->nom}}">
                              </div>
                              <br>
                          </div>
@@ -51,7 +51,7 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">PRENOM </label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenomch" id="prenomch" value="{{$chauffeur->prenomch}}">
+                                 <input type="text" class="form-control" name="prenom" id="prenom" value="{{$chauffeur->prenom}}">
                              </div>
                              <br>
                          </div>
@@ -59,7 +59,7 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">MATRICULE :</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="matriculech" id="matriculech"  value="{{$chauffeur->matriculech}}">
+                                 <input type="text" class="form-control" name="matricule" id="matricule"  value="{{$chauffeur->matricule}}">
                              </div>
                              <br>
                          </div>
@@ -68,7 +68,7 @@
                              <label  class=" col-sm-4 control-label">PERMIS :</label>
                              <div class="col-sm-8">
 
-                                 <input type="text" class="form-control" name="permisch" id="permisch"  value="{{$chauffeur->permisch}}">
+                                 <input type="text" class="form-control" name="permis" id="permis"  value="{{$chauffeur->permis}}">
 
                            </div>
                            <br>
@@ -78,7 +78,7 @@
                              <label  class=" col-sm-4 control-label">TELEPHONE :</label>
                              <div class="col-sm-8">
 
-                                 <input type="text" class="form-control" name="telch" id="telch"  value="{{$chauffeur->telch}}">
+                                 <input type="text" class="form-control" name="telephone" id="telephone"  value="{{$chauffeur->telephone}}">
 
                            </div>
                            <br>

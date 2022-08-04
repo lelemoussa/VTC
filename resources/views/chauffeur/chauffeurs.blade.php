@@ -15,6 +15,10 @@
             </div>
         @endif
 
+        <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Listes des chauffeurs</h6>
+                </div>
     <table class="table">
   <thead>
    
@@ -23,7 +27,7 @@
       <th scope="col">NOM</th>
       <th scope="col">PRENOM</th>
       <th scope="col">MATRICULE</th>
-      <th scope="col">Num PERMIS</th>
+      <th scope="col">N° PERMIS</th>
       <th scope="col">TELEPHONE</th>
       <th scope="col">ACTION</th>
     </tr>
@@ -53,6 +57,8 @@
   </table>
 
     </div>
+    </div>
+    
     
 
     

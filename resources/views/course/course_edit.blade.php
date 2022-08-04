@@ -11,7 +11,7 @@
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  EDITION D UN PASSAGER </h1>
+     <h1 align = "center" class=" bg-primary titre-contact">  EDITION D UN course </h1>
 
      <div class="panel panel-primary">
 
@@ -31,7 +31,7 @@
         </ul>
         </div>
         @endif
-         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('passager.update', ['passager'=>$passager->id]) }}">
+         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('course.update', ['course'=>$course->id]) }}">
          @csrf
            
              <div class="row">
@@ -43,7 +43,7 @@
                          
                              <label  class=" col-sm-4 control-label">NOM</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nom" id="nom" value="{{$passager->nom}}">
+                                 <input type="text" class="form-control" name="nom" id="nom" value="{{$course->nom}}">
                              </div>
                              <br>
                          </div>
@@ -51,14 +51,14 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">PRENOM</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenom" id="prenom" value="{{$passager->prenom}}">
+                                 <input type="text" class="form-control" name="prenom" id="prenom" value="{{$course->prenom}}">
                              </div>
                              <br>
                          </div>
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">TELEPHONE</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="telephone" id="telephone" value="{{$passager->telephone}}">
+                                 <input type="text" class="form-control" name="telephone" id="telephone" value="{{$course->telephone}}">
                              </div>
                              <br>
                          </div>
@@ -66,7 +66,7 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">SOCIETE</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="societe" id="societe" value="{{$passager->societe}}">
+                                 <input type="text" class="form-control" name="societe" id="societe" value="{{$course->societe}}">
                              </div>
                              <br>
                          </div>
@@ -74,7 +74,7 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">EMAIL</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="email" id="email" value="{{$passager->email}}">
+                                 <input type="text" class="form-control" name="email" id="email" value="{{$course->email}}">
                              </div>
                              <br>
                          </div>
@@ -83,7 +83,7 @@
                          <div class="form-group">
                              <label  class=" col-sm-4 control-label">CIVILITE</label>
                              <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="civilite" id="civilite" value="{{$passager->civilite}}">
+                                 <input type="text" class="form-control" name="civilite" id="civilite" value="{{$course->civilite}}">
                              </div>
                              <br>
                          </div>
@@ -92,9 +92,9 @@
                              <label  class=" col-sm-4 control-label">CLIENT</label>
                              <div class="col-sm-12">
                              <select  class="form-control" name="client_id" id="client_id"  >
-                                    @foreach($passagers as $passager)
+                                    @foreach($courses as $course)
                                         
-                                        <option value="{{ $passager->client_id }}" >{{ $passager->client->nom }}</option>
+                                        <option value="{{ $course->client_id }}" >{{ $course->client->nom }}</option>
 
                                     @endforeach
                                  </select>
@@ -108,7 +108,7 @@
                          <div class="form-group">
                          
                                <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('passager.index') }}" class="btn btn-danger">Annuler</a>
+                               <a href="{{ route('course.index') }}" class="btn btn-danger">Annuler</a>
 
                         </div>
 

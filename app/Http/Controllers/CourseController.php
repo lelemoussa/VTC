@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\voiture;
+use App\Models\chauffeur;
 use Illuminate\Http\Request;
+use App\Models\Passager;
 
 class CourseController extends Controller
 {
@@ -15,7 +18,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view('passager.passager',compact('courses'));
+        return view('course.course',compact('courses'));
     }
 
     /**
@@ -25,7 +28,10 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $chauffeurs = chauffeur::all();
+        $voitures = voiture::all();
+        $passagers = Passager::all();
+        return view('course.course',compact('chauffeurs','voitures','passagers'));
     }
 
     /**
@@ -36,7 +42,25 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'date' => ['required', 'date' ],
+            'chauffeur_id' => ['required'],
+            'voiture_id' => ['required'],
+            'passager_id' => ['required'],
+            
+        ]);
+        
+        course::create([
+            'date' => $request->date,
+            'chauffeur_id' => $request->chauffeur_id,
+            'voiture_id' => $request->voiture_id,
+            'passager_id' => $request->passager_id,
+            
+            
+        ]);
+        //course::create($request->all());
+        return back()->with("success", "course crée avec success");
     }
 
     /**
@@ -56,10 +80,12 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(course $course)
     {
-        //
+        $courses = course::all();
+        return view('course.course_edit', compact("course","courses"));
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -68,9 +94,27 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  course $course)
     {
-        //
+        $request->validate([
+
+            'date' => ['required' ],
+            'chauffeur_id' => ['required'],
+            'voiture_id' => ['required'],
+            'passager_id' => ['required'],
+            
+        ]);
+
+        $course->update([
+            'date' => $request->date,
+            'chauffeur_id' => $request->chauffeur_id,
+            'voiture_id' => $request->voiture_id,
+            'passager_id' => $request->passager_id,
+            
+            
+            
+        ]);
+        return back()->with("success", "course mis a jour avec success");
     }
 
     /**
@@ -79,8 +123,11 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($course)
     {
-        //
+        //$nom_complet = $course->nom ." ". $course->prenom;
+        course::find($course)->delete();
+        
+        return back()->with("successDelete","course suprimé avec success");
     }
 }

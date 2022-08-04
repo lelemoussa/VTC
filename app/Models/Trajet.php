@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Client;
+
+use App\Models\voiture;
+use App\Models\Passager;
+use App\Models\chauffeur;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,4 +19,6 @@ class Trajet extends Model
     {
        return $this->belongsTo(Client::class);
     }
+
+   
 }

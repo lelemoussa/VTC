@@ -1,17 +1,14 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
+<br>
+<div class = "container">
            
-
-
-
 <div id="page-wrapper" style="min-height: 292px;">
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h3 align = "center" class=" bg titre-contact">  AJOUTER UN NOUVEAU CHAUFFEUR </h3>
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Ajouter Chauffeur</h1>
 <br>
      <div class="panel panel-primary">
 
@@ -31,69 +28,54 @@
         </ul>
         </div>
         @endif
+        <div class="container">
+            
+            <div class="card mb-4">
+            <div class="card-body">
          <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('chauffeur.store') }}">
          @csrf
            
-             <div class="row">
-                 
-             
-                         
-
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">NOM</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nom" id="nom" >
-                             </div>
-                             <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">NOM</label>
+                         <input type="text" class="form-control" id="nom" name="nom"
+                            placeholder="Entrer un nom">
                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PRENOM</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenom" id="prenom" >
-                             </div>
-                             <br>
-                         </div>
+                    </div>
+                    
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">MATRICULE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="matricule" id="matricule"  >
-                             </div>
-                             <br>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PERMIS</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">PRENOM</label>
+                         <input type="text" class="form-control" id="prenom" name="prenom"
+                            placeholder="Entrer un prenom">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="permis" id="permis"  >
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">MATRICULE</label>
+                         <input type="text" class="form-control" id="matricule" name="matricule"
+                            placeholder="Entrer un matricule">
+                     
+                    </div>
 
-                           </div>
-                           <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">N° PERMIS</label>
+                         <input type="text" class="form-control" id="permis" name="permis"
+                            placeholder="Entrer un N° permis">
+                     
+                    </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">TELEPHONE</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">TELEPHONE</label>
+                         <input type="text" class="form-control" id="telephone" name="telephone"
+                            placeholder="Entrer un numero telephone à 10 chiffres">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="telephone" id="telephone"  >
-
-                           </div>
-                           <br>
-                         </div>
-
-                         <div class="form-group">
-                         
-                               <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('chauffeur.index') }}" class="btn btn-danger">Annuler</a>
-
-                        </div>
-
-           </div> <!--row -->
-
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{{ route('chauffeur.index') }}" class="btn btn-danger">Annuler</a>
          </form> <!--  /form>-->
+     </div>
+     </div>
 
 
 

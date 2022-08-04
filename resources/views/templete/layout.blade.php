@@ -149,11 +149,11 @@
           </button>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+              <!-- <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+              </a> -->
+              <!-- <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                 aria-labelledby="searchDropdown">
                 <form class="navbar-search">
                   <div class="input-group">
@@ -167,8 +167,8 @@
                   </div>
                 </form>
               </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
+            </li> -->
+            <!-- <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
@@ -297,9 +297,9 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
               </div>
-            </li>
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
+            </li> -->
+            <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
+            <!-- <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="{{ url('img/boy.png') }}" style="max-width: 60px">
@@ -324,7 +324,7 @@
                   Logout
                 </a>
               </div>
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- Topbar -->
@@ -336,7 +336,7 @@
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <!-- <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
@@ -344,7 +344,7 @@
             </span>
           </div>
         </div>
-      </footer>
+      </footer> -->
       <!-- Footer -->
     </div>
   </div>

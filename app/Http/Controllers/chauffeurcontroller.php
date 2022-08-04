@@ -39,10 +39,10 @@ class ChauffeurController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required', 'string'],
-            'prenom' => ['required','string' ],
+            'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
+            'prenom' => ['required','regex:/^[A-Za-z]+$/' ],
             'matricule' => ['required','unique:chauffeurs' ],
-            'permis' => ['required','unique:chauffeurs' ],
+            'permis' => ['required','numeric','unique:chauffeurs' ],
             'telephone' => ['required','numeric','min:10','unique:chauffeurs' ],
 
         ]);
@@ -93,10 +93,10 @@ class ChauffeurController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required', 'string'],
-            'prenom' => ['required','string'],
+            'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
+            'prenom' => ['required','regex:/^[A-Za-z]+$/' ],
             'matricule' => ['required'],
-            'permis' => ['required' ],
+            'permis' => ['required' ,'numeric'],
             'telephone' => ['required','numeric','min:10'],
 
         ]);

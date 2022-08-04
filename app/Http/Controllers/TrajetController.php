@@ -41,8 +41,8 @@ class TrajetController extends Controller
     {
         $request->validate([
 
-            'depart' => ['required' ],
-            'arrive' => ['required' ],
+            'depart' => ['required' , 'regex:/^[A-Za-z]+$/' ],
+            'arrive' => ['required', 'regex:/^[A-Za-z]+$/'],
             'client_id' => ['required' ],
             
         ]);
@@ -92,8 +92,8 @@ class TrajetController extends Controller
     {
         $request->validate([
 
-            'depart' => ['required' ],
-            'arrive' => ['required' ],
+            'depart' => ['required', 'regex:/^[A-Za-z]+$/' ],
+            'arrive' => ['required' , 'regex:/^[A-Za-z]+$/'],
             'client_id' => ['required' ],
             
         ]);
@@ -105,7 +105,7 @@ class TrajetController extends Controller
             
             
         ]);
-        return back()->with("success", "trajet mis a jour avec success");
+        return back()->with("success", "trajet modifié avec success");
     }
 
     /**

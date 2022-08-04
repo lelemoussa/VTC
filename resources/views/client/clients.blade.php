@@ -1,13 +1,7 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <div class = "container ">
-    
-      
-
+  
       @if(session()->has("successDelete"))
 
             <div class="alert alert-success">
@@ -15,21 +9,32 @@
             </div>
         @endif
 
-    <table class="table">
-  <thead>
-   
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">NOM</th>
-      <th scope="col">PRENOM</th>
-      <th scope="col">TELEPHONE</th>
-      <th scope="col">SOCIETE</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">CIVILITE</th>
-      <th scope="col">ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
+
+
+<div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Listes des clients</h6>
+                </div>
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>NOM</th>
+                        <th>PRENOM</th>
+                        <th>TELEPHONE</th>
+                        <th>SOCIETE</th>
+                        <th>EMAIL</th>
+                        <th>CIVILITE</th>
+                        <th>ACTION</th>                        
+                      </tr>
+                    </thead>
+                    <tbody>
   @foreach($clients as $client)
     <tr>
       <th scope="row">{{ $loop->index +1 }}</th>
@@ -41,7 +46,7 @@
       <td>{{ $client->civilite }}</td>
       <td>
         <a href="{{ route('client.edit', ['client'=>$client]) }}" class="btn btn-warning">editer</a>
-        <a href="#" class="btn btn-danger" onclick="if(confirm('voulez vous vraiment suprimer cet client?')){document.getElementById('form-{{$client->id}}').submit() }">suprimer</a>
+        <a href="#" class="btn btn-danger" onclick="if(confirm('voulez vous vraiment suprimer cette client?')){document.getElementById('form-{{$client->id}}').submit() }">suprimer</a>
         <form  id="form-{{$client->id}}" action="{{ route('client.supprimer', ['client'=>$client->id]) }}" method="post">
             @csrf
             <input type="hidden" name="_method" value="delete">
@@ -51,15 +56,15 @@
     </tr>
     @endforeach
     
-  </tbody>
-  </table>
+     </tbody>
+                      
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
 
-    </div>
-    
-
-    
-    <br>
-    <br>
-    <br>
+ </div>   <!-- card -->  
 
 @endsection

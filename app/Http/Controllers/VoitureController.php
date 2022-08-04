@@ -39,13 +39,13 @@ class voitureController extends Controller
     {
         $request->validate([
 
-            'marque' => ['required', 'string' ],
-            'immatriculation' => ['required', 'string' ,'unique:voitures' ],
+            'marque' => ['required', 'regex:/^[A-Za-z]+$/' ],
+            'immatriculation' => ['required', 'regex:/^[A-Za-z0-9]+$/' ,'unique:voitures' ],
             'place' => ['required', 'integer'],
-            'description' => ['required' , 'string'],
+            'description' => ['required' , 'regex:/^[A-Za-z]+$/'],
             'modele' => ['required', 'string'],
             'annee' => ['required', 'integer'],
-            'couleur' => ['required', 'string' ],
+            'couleur' => ['required', 'regex:/^[A-Za-z]+$/' ],
 
 
         ]);
@@ -101,13 +101,14 @@ class voitureController extends Controller
     {
         $request->validate([
 
-            'marque' => ['required', 'string' ],
-            'immatriculation' => ['required', 'string'  ],
+            'marque' => ['required', 'regex:/^[A-Za-z]+$/' ],
+            'immatriculation' => ['required', 'regex:/^[A-Za-z0-9]+$/' ],
             'place' => ['required', 'integer'],
-            'description' => ['required' , 'string'],
+            'description' => ['required' , 'regex:/^[A-Za-z]+$/'],
             'modele' => ['required', 'string'],
             'annee' => ['required', 'integer'],
-            'couleur' => ['required', 'string' ],
+            'couleur' => ['required', 'regex:/^[A-Za-z]+$/' ],
+
 
 
 
@@ -125,7 +126,7 @@ class voitureController extends Controller
 
             
         ]);
-        return back()->with("success", "voiture mis a jour avec success");
+        return back()->with("success", "voiture modifié  avec success");
         
     }
 

@@ -1,18 +1,11 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
-           
+<br>
 
-
-
-<div id="page-wrapper" style="min-height: 292px;">
-
-<div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UNE NOUVELLE VOITURE </h1>
-
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Ajouter Voiture</h1>
+ <br>
      <div class="panel panel-primary">
 
         @if(session()->has("success"))
@@ -31,107 +24,68 @@
         </ul>
         </div>
         @endif
+            <div class="container">
+            <div class="card mb-4">
+            <div class="card-body">
          <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('voiture.store') }}">
          @csrf
            
-             <div class="row">
-                 
-             
-                         
-
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">MARQUE </label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="marque" id="marque" >
-                             </div>
-                             <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">MARQUE</label>
+                         <input type="text" class="form-control" id="marque" name="marque"
+                            placeholder="Enter une marque">
                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">IMMATRICULATION </label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="immatriculation" id="immatriculation" >
-                             </div>
-                             <br>
-                         </div>
+                    </div>
+                    
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PLACE </label>
-                             <div class="col-sm-8">
-                                 <input type="number" class="form-control" name="place" id="place"  >
-                             </div>
-                             <br>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">DESCRIPTION </label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">IMMATRICULATION</label>
+                         <input type="text" class="form-control" id="immatriculation" name="immatriculation"
+                            placeholder="Enter une immatriculation">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="description" id="description"  >
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">PLACE</label>
+                         <input type="number" class="form-control" id="place" name="place"
+                            placeholder="Enter une place">
+                     
+                    </div>
 
-                           </div>
-                           <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">DESCRIPTION</label>
+                         <input type="text" class="form-control" id="description" name="description"
+                            placeholder="Enter une description">
+                     
+                    </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">MODELE </label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">MODELE</label>
+                         <input type="text" class="form-control" id="modele" name="modele"
+                            placeholder="Enter un modele">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="modele" id="modele"  >
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">ANNEE</label>
+                         <input type="text" class="form-control" id="annee" name="annee"
+                            placeholder="Enter une annee">
+                     
+                    </div>
 
-                           </div>
-                           <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">ANNEE</label>
-                             <div class="col-sm-8">
-
-                                 <input type="text" class="form-control" name="annee" id="annee"  >
-
-                           </div>
-                           <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">COULEUR</label>
-                             <div class="col-sm-8">
-
-                                 <input type="text" class="form-control" name="couleur" id="couleur"  >
-
-                           </div>
-                           <br>
-                         </div>
-
-                         
-
-                         <div class="form-group">
-                         
-                               <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('voiture.index') }}" class="btn btn-danger">Annuler</a>
-
-                        </div>
-
-           </div> <!--row -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">COULEUR</label>
+                         <input type="text" class="form-control" id="couleur" name="couleur"
+                            placeholder="Enter une couleur">
+                     
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{{ route('voiture.index') }}" class="btn btn-danger">Annuler</a>
 
          </form> <!--  /form>-->
-
-
-
      </div>
-
+     </div>
+</div>
  </div>
-</div>
-</div>
-
-
-    </div>
-    
-      
-    
-    
-
-    
-    <br>
-   @endsection
+<br>
+@endsection

@@ -41,7 +41,7 @@ class GpsController extends Controller
     {
          $request->validate([
 
-            'latitude' => ['required' , 'numeric'],
+            'latitude' => ['required' , 'numeric' ],
             'longitude' => ['required', 'numeric' ],
             'client_id' => ['required' , 'integer'],
             
@@ -114,7 +114,7 @@ class GpsController extends Controller
             
             
         ]);
-        return back()->with("success", "point gps mis a jour avec success");
+        return back()->with("success", "point gps modifié avec success");
     }
 
     /**

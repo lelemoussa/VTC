@@ -43,7 +43,7 @@ class ClientController extends Controller
             'prenom' => ['required' , 'string'],
             'telephone' => ['required','numeric','min:10','unique:clients' ],
             'societe' => ['required' ,'string' ],
-            'email' => ['required','email','unique:clients' ],
+            'email' => ['required','email','unique:clients'],
             'civilite' => ['required' ,'string' ],
 
         ]);

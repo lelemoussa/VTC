@@ -1,17 +1,14 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
-           
-
-
-
+<br>
+ <div class = "container ">
 <div id="page-wrapper" style="min-height: 292px;">
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UN NOUVEAU CLIENT </h1>
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Ajouter Client</h1>
+<br>
 
      <div class="panel panel-primary">
 
@@ -31,69 +28,63 @@
         </ul>
         </div>
         @endif
+          
+        <div class="container">
+            
+            <div class="card mb-4">
+            <div class="card-body">
          <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('client.store') }}">
          @csrf
            
-             <div class="row">
-                 
-             
-                         
-
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">NOM</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nom" id="nom" >
-                             </div>
-                             <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">NOM</label>
+                         <input type="text" class="form-control" id="nom" name="nom"
+                            placeholder="Entrer un nom">
                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PRENOM</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenom" id="prenom" >
-                             </div>
-                             <br>
-                         </div>
+                    </div>
+                    
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">TELEPHONE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="telephone" id="telephone"  >
-                             </div>
-                             <br>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">SOCIETE</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">PRENOM</label>
+                         <input type="text" class="form-control" id="prenom" name="prenom"
+                            placeholder="Entrer un prenom">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="societe" id="societe"  >
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">TELEPHONE</label>
+                         <input type="text" class="form-control" id="telephone" name="telephone"
+                            placeholder="Entrer un numéro de telephone à 10 chiffres ">
+                     
+                    </div>
 
-                           </div>
-                           <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">SOCIETE</label>
+                         <input type="text" class="form-control" id="societe" name="societe"
+                            placeholder="Entrer une societe">
+                     
+                    </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">EMAIL</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">EMAIL</label>
+                        <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control"  id="email" name="email" aria-label="Username"
+                      aria-describedby="basic-addon1" placeholder="entrer une adresse émail valide">
+                  </div>
+                     
+                    </div>
 
-                                 <input type="email" class="form-control" name="email" id="email"  >
-
-                           </div>
-                           <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CIVILITE</label>
-                             <div class="col-sm-8">
-
-                                 <input type="civilite" class="form-control" name="civilite" id="civilite"  >
-
-                           </div>
-                           <br>
-                         </div>
-
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">CIVILITE</label>
+                         <input type="text" class="form-control" id="civilite" name="civilite"
+                            placeholder="Entrer une civilité">
+                     
+                    </div>
+           
+             
                          <div class="form-group">
                          
                                <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
@@ -106,8 +97,9 @@
          </form> <!--  /form>-->
 
 
-
-     </div>
+         </div>
+         </div>
+        </div>
 
  </div>
 </div>

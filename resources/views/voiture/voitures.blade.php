@@ -1,12 +1,7 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <div class = "container ">
     
-      
 
       @if(session()->has("successDelete"))
 
@@ -15,22 +10,33 @@
             </div>
         @endif
 
-    <table class="table">
-  <thead>
-   
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">MARQUE</th>
-      <th scope="col">IMMATRICULATION</th>
-      <th scope="col">NBRE PLACE</th>
-      <th scope="col">DESCRIPTION</th>
-      <th scope="col">MODELE</th>
-      <th scope="col">ANNEE</th>
-      <th scope="col">COULEUR</th>
-      <th scope="col">ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
+
+        <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Listes des voitures</h6>
+                </div>
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>#</th>
+                        <th>MARQUE</th>
+                        <th>IMMATRICULATION</th>
+                        <th>PLACE</th>
+                        <th>DESCRIPTION</th>
+                        <th>MODELE</th>
+                        <th>ANNEE</th>
+                        <th>COULEUR</th>
+                        <th>ACTION</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
   @foreach($voitures as $voiture)
     <tr>
       <th scope="row">{{ $loop->index +1 }}</th>
@@ -54,15 +60,19 @@
     </tr>
     @endforeach
     
-  </tbody>
-  </table>
+     </tbody>
+                      
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
 
-    </div>
+ </div>   <!-- card -->        
     
 
     
-    <br>
-    <br>
-    <br>
+    
 
 @endsection

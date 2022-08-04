@@ -31,21 +31,21 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($passagers as $passager)
+  @foreach($courses as $course)
     <tr>
       <th scope="row">{{ $loop->index +1 }}</th>
-      <td>{{ $passager->nom }}</td>
-      <td>{{ $passager->prenom }}</td>
-      <td>{{ $passager->telephone }}</td>
-      <td>{{ $passager->societe }}</td>
-      <td>{{ $passager->email }}</td>
-      <td>{{ $passager->civilite }}</td>
-      <td>{{ $passager->client->nom }}</td>
+      <td>{{ $course->nom }}</td>
+      <td>{{ $course->prenom }}</td>
+      <td>{{ $course->telephone }}</td>
+      <td>{{ $course->societe }}</td>
+      <td>{{ $course->email }}</td>
+      <td>{{ $course->civilite }}</td>
+      <td>{{ $course->client->nom }}</td>
    
       <td>
-        <a href="{{ route('passager.edit', ['passager'=>$passager]) }}" class="btn btn-warning">editer</a>
-        <a href="#" class="btn btn-danger" onclick="if(confirm('voulez vous vraiment suprimer cet passager?')){document.getElementById('form-{{$passager->id}}').submit() }">suprimer</a>
-        <form  id="form-{{$passager->id}}" action="{{ route('passager.supprimer', ['passager'=>$passager->id]) }}" method="post">
+        <a href="{{ route('course.edit', ['course'=>$course]) }}" class="btn btn-warning">editer</a>
+        <a href="#" class="btn btn-danger" onclick="if(confirm('voulez vous vraiment suprimer cet course?')){document.getElementById('form-{{$course->id}}').submit() }">suprimer</a>
+        <form  id="form-{{$course->id}}" action="{{ route('course.supprimer', ['course'=>$course->id]) }}" method="post">
             @csrf
             <input type="hidden" name="_method" value="delete">
         </form>

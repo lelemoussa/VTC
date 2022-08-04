@@ -11,7 +11,7 @@
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UN NOUVEAU PASSAGER </h1>
+     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UN NOUVELLE COURSE </h1>
 
      <div class="panel panel-primary">
 
@@ -31,7 +31,7 @@
         </ul>
         </div>
         @endif
-         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('passager.store') }}">
+         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('course.store') }}">
          @csrf
            
              <div class="row">
@@ -41,61 +41,49 @@
 
                          <div class="form-group">
                          
-                             <label  class=" col-sm-4 control-label">Date de la Course</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="date" id="date" >
-                             </div>
-                             <br>
-                         </div>
-                     
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">PRENOM</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenom" id="prenom" >
-                             </div>
-                             <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">TELEPHONE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="telephone" id="telephone" >
-                             </div>
-                             <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">SOCIETE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="societe" id="societe" >
-                             </div>
-                             <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">EMAIL</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="email" id="email" >
-                             </div>
-                             <br>
-                         </div>
-
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CIVILITE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="civilite" id="civilite" >
-                             </div>
-                             <br>
-                         </div>
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CLIENT</label>
+                             <label  class=" col-sm-4 control-label">DATE</label>
                              <div class="col-sm-12">
-                                 <select  class="form-control" name="client_id" id="client_id"  >
-                                    @foreach($clients as $client)
+                                 <input type="date" class="form-control" name="date" id="date" >
+                             </div>
+                             <br>
+                         </div>
+                    
+
+                         <div class="form-group">
+                             <label  class=" col-sm-4 control-label">CHAUFFEUR</label>
+                             <div class="col-sm-12">
+                                 <select  class="form-control" name="chauffeur_id" id="chauffeur_id"  >
+                                    @foreach($chauffeurs as $chauffeur)
                                         <option value=""></option>
-                                        <option value="{{ $client->id }}">{{ $client->nom }}</option>
+                                        <option value="{{ $chauffeur->id }}">{{ $chauffeur->nom }}</option>
+
+                                    @endforeach
+                                 </select>
+                             </div>
+                             <br>
+                         </div>
+
+                         <div class="form-group">
+                             <label  class=" col-sm-4 control-label">VOITURE</label>
+                             <div class="col-sm-12">
+                                 <select  class="form-control" name="voiture_id" id="voiture_id"  >
+                                    @foreach($voitures as $voiture)
+                                        <option value=""></option>
+                                        <option value="{{ $voiture->id }}">{{ $voiture->marque }}</option>
+
+                                    @endforeach
+                                 </select>
+                             </div>
+                             <br>
+                         </div>
+                      
+                         <div class="form-group">
+                             <label  class=" col-sm-4 control-label">Passager</label>
+                             <div class="col-sm-12">
+                                 <select  class="form-control" name="passager_id" id="passager_id"  >
+                                    @foreach($passagers as $passager)
+                                        <option value=""></option>
+                                        <option value="{{ $passager->id }}">{{ $passager->nom }}</option>
 
                                     @endforeach
                                  </select>
@@ -107,7 +95,7 @@
                          <div class="form-group">
                          
                                <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('passager.index') }}" class="btn btn-danger">Annuler</a>
+                               <a href="{{ route('course.index') }}" class="btn btn-danger">Annuler</a>
 
                         </div>
 

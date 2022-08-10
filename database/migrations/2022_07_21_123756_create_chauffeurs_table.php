@@ -20,6 +20,7 @@ class CreateChauffeursTable extends Migration
             $table->string('matricule');
             $table->string('permis');
             $table->text('telephone');
+            $table->text('civilite');
             $table->timestamps();
         });
     }

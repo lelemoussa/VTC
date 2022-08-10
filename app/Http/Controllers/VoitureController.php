@@ -42,10 +42,10 @@ class voitureController extends Controller
             'marque' => ['required', 'regex:/^[A-Za-z]+$/' ],
             'immatriculation' => ['required', 'regex:/^[A-Za-z0-9]+$/' ,'unique:voitures' ],
             'place' => ['required', 'integer'],
-            'description' => ['required' , 'regex:/^[A-Za-z]+$/'],
             'modele' => ['required', 'string'],
-            'annee' => ['required', 'integer'],
             'couleur' => ['required', 'regex:/^[A-Za-z]+$/' ],
+            'description' => ['regex:/^[A-Za-z]+$/'],
+            'annee' => ['integer'],
 
 
         ]);
@@ -54,10 +54,11 @@ class voitureController extends Controller
             'marque' => $request->marque,
             'immatriculation' => $request->immatriculation,
             'place' => $request->place,
-            'description' => $request->description,
             'modele' => $request->modele,
-            'annee' => $request->annee,
             'couleur' => $request->couleur,
+            'description' => $request->description,
+            'annee' => $request->annee,
+            
 
 
 
@@ -104,10 +105,10 @@ class voitureController extends Controller
             'marque' => ['required', 'regex:/^[A-Za-z]+$/' ],
             'immatriculation' => ['required', 'regex:/^[A-Za-z0-9]+$/' ],
             'place' => ['required', 'integer'],
-            'description' => ['required' , 'regex:/^[A-Za-z]+$/'],
             'modele' => ['required', 'string'],
-            'annee' => ['required', 'integer'],
             'couleur' => ['required', 'regex:/^[A-Za-z]+$/' ],
+            'description' => ['regex:/^[A-Za-z]+$/'],
+            'annee' => ['integer'],
 
 
 
@@ -118,10 +119,10 @@ class voitureController extends Controller
             'marque' => $request->marque,
             'immatriculation' => $request->immatriculation,
             'place' => $request->place,
-            'description' => $request->description,
             'modele' => $request->modele,
-            'annee' => $request->annee,
             'couleur' => $request->couleur,
+            'description' => $request->description,
+            'annee' => $request->annee,
 
 
             

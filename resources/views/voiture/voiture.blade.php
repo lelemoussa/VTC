@@ -46,18 +46,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">PLACE</label>
+                        <label for="exampleInputEmail1">NBRE-PLACE</label>
                          <input type="number" class="form-control" id="place" name="place"
-                            placeholder="Enter une place">
+                            placeholder="Enter le nombre de place">
                      
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">DESCRIPTION</label>
-                         <input type="text" class="form-control" id="description" name="description"
-                            placeholder="Enter une description">
-                     
-                    </div>
+                
+                    
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">MODELE</label>
@@ -66,19 +62,28 @@
                      
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">ANNEE</label>
-                         <input type="text" class="form-control" id="annee" name="annee"
-                            placeholder="Enter une annee">
-                     
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="exampleInputEmail1">COULEUR</label>
                          <input type="text" class="form-control" id="couleur" name="couleur"
                             placeholder="Enter une couleur">
                      
                     </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">ANNEE DE  CONSTRUCTION</label>
+                         <input type="text" class="form-control" id="annee" name="annee"
+                            placeholder="Enter une année de construction">
+                     
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">DESCRIPTION</label>
+                      <textarea class="form-control" id="description" name="description"
+                            placeholder="Enter une description" rows="3"></textarea>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                     <a href="{{ route('voiture.index') }}" class="btn btn-danger">Annuler</a>
 

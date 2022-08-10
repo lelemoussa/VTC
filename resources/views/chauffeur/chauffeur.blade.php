@@ -71,6 +71,14 @@
                      
                     </div>
 
+                    <div class="form-group">
+                    <label for="select2SinglePlaceholder">Selectionner votre civilité</label>
+                    <select class="select2-single-placeholder form-control" name="civilite" id="civilite">
+                      <option value="MESSIEUR">MESSIEUR</option>
+                      <option value="MADAME">MADAME</option>
+                    </select>
+                  </div>
+
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                     <a href="{{ route('chauffeur.index') }}" class="btn btn-danger">Annuler</a>
          </form> <!--  /form>-->

@@ -42,8 +42,10 @@ class ChauffeurController extends Controller
             'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
             'prenom' => ['required','regex:/^[A-Za-z]+$/' ],
             'matricule' => ['required','unique:chauffeurs' ],
-            'permis' => ['required','numeric','unique:chauffeurs' ],
-            'telephone' => ['required','numeric','min:10','unique:chauffeurs' ],
+            'permis' => ['numeric','unique:chauffeurs' ],
+            'telephone' => ['numeric','min:10','unique:chauffeurs' ],
+            'civilite' => ['regex:/^[A-Za-z]+$/'],
+
 
         ]);
 
@@ -53,7 +55,8 @@ class ChauffeurController extends Controller
             'matricule' => $request->matricule,
             'permis' => $request->permis,
             'telephone' => $request->telephone,
-            
+            'civilite' => $request->civilite,
+
         ]);
         return back()->with("success", "chauffeur crée avec success");
         
@@ -96,8 +99,10 @@ class ChauffeurController extends Controller
             'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
             'prenom' => ['required','regex:/^[A-Za-z]+$/' ],
             'matricule' => ['required'],
-            'permis' => ['required' ,'numeric'],
-            'telephone' => ['required','numeric','min:10'],
+            'permis' => ['numeric'],
+            'telephone' => ['numeric','min:10'],
+            'civilite' => ['regex:/^[A-Za-z]+$/'],
+
 
         ]);
 
@@ -107,6 +112,8 @@ class ChauffeurController extends Controller
             'matricule' => $request->matricule,
             'permis' => $request->permis,
             'telephone' => $request->telephone,
+            'civilite' => $request->civilite,
+
             
         ]);
         return back()->with("success", "chauffeur mis a jour avec success");

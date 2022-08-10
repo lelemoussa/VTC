@@ -38,6 +38,8 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
+          
+          
           <span>Chauffeurs</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
@@ -52,7 +54,9 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
-          <i class="fab fa-fw fa-wpforms"></i>
+          <!-- <i class="fab fa-fw fa-wpforms"></i> -->
+          <i class="fa fa-taxi" aria-hidden="true"></i>
+
           <span>Voitures</span>
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
@@ -72,8 +76,8 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Client</h6>
-            <a class="collapse-item" href="{{ route('client.create') }}">Créer une Client</a>
-            <a class="collapse-item" href="{{ route('client.index') }}">Listes des Client</a>
+            <a class="collapse-item" href="{{ route('client.create') }}">Créer un Client</a>
+            <a class="collapse-item" href="{{ route('client.index') }}">Listes des Clients</a>
           </div>
         </div>
       </li>
@@ -103,7 +107,7 @@
         <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Passagers</h6>
-            <a class="collapse-item" href="{{ route('passager.create') }}">Créer un Passagers</a>
+            <a class="collapse-item" href="{{ route('passager.create') }}">Créer un Passager</a>
             <a class="collapse-item" href="{{ route('passager.index') }}">Listes des Passagers</a>
             
           </div>

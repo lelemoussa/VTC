@@ -1,18 +1,15 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
+<br>
+<div class = "container">
            
-
-
-
 <div id="page-wrapper" style="min-height: 292px;">
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  EDITION D UN CLIENT </h1>
-
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Modifier Client</h1>
+<br>
      <div class="panel panel-primary">
 
         @if(session()->has("success"))
@@ -31,79 +28,70 @@
         </ul>
         </div>
         @endif
-         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('client.update', ['client'=>$client->id]) }}">
-         @csrf
-           
-             <div class="row">
-                 
-             <input type="hidden" name="_method" value="put">
+        <div class="container">
+            
+            <div class="card mb-4">
+            <div class="card-body">
+            <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('client.update', ['client'=>$client->id]) }}">
+                         @csrf
+                         <input type="hidden" name="_method" value="put">
                          
-
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">NOM </label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="nom" id="nom" value="{{$client->nom}}">
-                             </div>
-                             <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">NOM</label>
+                         <input type="text" class="form-control" id="nom" name="nom" value="{{$client->nom}}"
+                            placeholder="Entrer un nom">
                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">prenom </label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="prenom" id="prenom" value="{{$client->prenom}}">
-                             </div>
-                             <br>
-                         </div>
+                    </div>
+                    
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">TELEPHONE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="telephone" id="telephone"  value="{{$client->telephone}}">
-                             </div>
-                             <br>
-                         </div>
-                         
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">SOCIETE</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">PRENOM</label>
+                         <input type="text" class="form-control" id="prenom" name="prenom"  value="{{$client->prenom}}"
+                            placeholder="Entrer un prenom">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="societe" id="societe"  value="{{$client->societe}}">
+                    
 
-                           </div>
-                           <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">TELEPHONE</label>
+                         <input type="text" class="form-control" id="telephone" name="telephone" value="{{$client->telephone}}"
+                            placeholder="Entrer un numero telephone à 10 chiffres">
+                     
+                    </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">EMAIL</label>
-                             <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">SOCIETE</label>
+                         <input type="text" class="form-control" id="societe" name="societe"  value="{{$client->societe}}"
+                            placeholder="Entrer une societe">
+                     
+                    </div>
 
-                                 <input type="text" class="form-control" name="email" id="email"  value="{{$client->email}}">
+                    <div class="form-group email">
+                        <label for="exampleInputEmail1">EMAIL</label>
+                        <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control "  id="email" name="email" value="{{$client->email}}" aria-label="Username"
+                      aria-describedby="basic-addon1" placeholder="entrer une adresse émail valide">
+                  </div>
+                     
+                    </div>                    
 
-                           </div>
-                           <br>
-                         </div>
+                    <div class="form-group">
+                    <label for="select2SinglePlaceholder">Selectionner votre civilité</label>
+                    <select class="select2-single-placeholder form-control" name="civilite" id="civilite" value="{{$client->civilite}}">
+                      <option value="civilite">MESSIEUR</option>
+                      <option value="civilite">MADAME</option>
+                    </select>
+                  </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CIVILITE</label>
-                             <div class="col-sm-8">
-
-                                 <input type="text" class="form-control" name="civilite" id="civilite"  value="{{$client->civilite}}">
-
-                           </div>
-                           <br>
-                         </div>
-
-                         <div class="form-group">
-                         
-                               <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('client.index') }}" class="btn btn-danger">Annuler</a>
-
-                        </div>
-
-           </div> <!--row -->
-
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{{ route('client.index') }}" class="btn btn-danger">Annuler</a>
          </form> <!--  /form>-->
+     </div>
+     </div>
 
 
 
@@ -122,4 +110,4 @@
 
     
     <br>
-@endsection
+   @endsection

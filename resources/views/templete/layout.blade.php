@@ -26,9 +26,9 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('login') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Tableau de bord</span></a>
+          <span>ACCEUIL</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -303,11 +303,11 @@
               </div>
             </li> -->
             <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
-            <!-- <li class="nav-item dropdown no-arrow">
+            <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="{{ url('img/boy.png') }}" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">{{auth()->user()->name}}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -318,17 +318,17 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
+                <!-- <a class="dropdown-item" href="{{ route('register') }}">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                  Créer un compte
+                </a> -->
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
+                <form class="dropdown-item" action="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal" method="POST">
+                  @csrf                  
+                 <input type="submit" value="Deconnexion" class="dropdown-item btn btn-primary" style="background:red; color:#FFF">
+                </form>
               </div>
-            </li> -->
+            </li> 
           </ul>
         </nav>
         <!-- Topbar -->

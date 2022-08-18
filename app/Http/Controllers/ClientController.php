@@ -35,28 +35,21 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Client $client)
     {
         $request->validate([
 
-            'nom' => ['required' , 'string'],
-            'prenom' => ['required' , 'string'],
-            'telephone' => ['required','numeric','min:10','unique:clients' ],
-            'societe' => ['required' ,'string' ],
-            'email' => ['required','email','unique:clients'],
-            'civilite' => ['required' ,'string' ],
+            'nom' => ['required' , 'regex:/^[A-Za-z]+$/'],
+            'telephone' => ['numeric','min:10','unique:clients' ],
+            'email' => ['email','unique:clients'],
+            //'prenom' => ['regex:/^[A-Za-z]+$/'],
+            //'societe' => ['regex:/^[A-Za-z]+$/' ],
+            //'civilite' => ['regex:/^[A-Za-z]+$/' ],
 
         ]);
+        
 
-        Client::create([
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'telephone' => $request->telephone,
-            'societe' => $request->societe,
-            'email' => $request->email,
-            'civilite' => $request->civilite,
-            
-        ]);
+        $client->create($request->except(['_token']));
         return back()->with("success", "client crée avec success");
         
     }
@@ -95,12 +88,12 @@ class ClientController extends Controller
     {
         $request->validate([
 
-            'nom' => ['required' , 'string'],
-            'prenom' => ['required' , 'string'],
-            'telephone' => ['required','numeric','min:10' ],
-            'societe' => ['required' ,'string' ],
-            'email' => ['required','email' ],
-            'civilite' => ['required' ,'string' ],
+            'nom' => ['required' , 'regex:/^[A-Za-z]+$/'],
+            'telephone' => ['numeric','min:10' ],
+            'email' => ['email'],
+             //'prenom' => ['regex:/^[A-Za-z]+$/'],
+            //'societe' => ['regex:/^[A-Za-z]+$/' ],
+            //'civilite' => ['regex:/^[A-Za-z]+$/' ],
 
         ]);
 

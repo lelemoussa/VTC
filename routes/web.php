@@ -8,6 +8,7 @@ use App\Http\Controllers\TrajetController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\PassagerController;
 use App\Http\Controllers\ChauffeurController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $chauffeurs = DB::table('chauffeurs')->count();
+    $voitures = DB::table('voitures')->count();
+    $clients = DB::table('clients')->count();
+    $passagers = DB::table('passagers')->count();
+    return view('dashboard',compact('chauffeurs','voitures','clients','passagers'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -74,9 +79,9 @@ Route::middleware(['auth'])->group(function(){
     
     //route pour Gps
     Route::resource("gps",GpsController::class);
-    // route::get("/gpss/{gps}" ,[GpsController::class, 'edit'])->name("gpss.edit");
-    // route::delete("/gps/{gps}" ,[GpsController::class, 'destroy'])->name("gps.supprimer");
-    // route::put("/gps/{gps}" ,[GpsController::class, 'update'])->name("gps.update");
+     route::get("/gpss/{gps}" ,[GpsController::class, 'edit'])->name("gpss.edit");
+    route::delete("/gps/{gps}" ,[GpsController::class, 'destroy'])->name("gps.supprimer");
+    route::put("/gps/{gps}" ,[GpsController::class, 'update'])->name("gps.update");
     
     
     //route pour les courses

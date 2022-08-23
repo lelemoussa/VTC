@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,10 +9,9 @@
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
   <title>VTC - Dashboard</title>
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.min.css" rel="stylesheet">
-
+  <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-login">
@@ -33,10 +31,10 @@
                   @csrf
                     <div class="form-group">
                       <input type="email" class="form-control"  name="email" id="exampleInputEmail" aria-describedby="emailHelp"
-                        placeholder="Enter Email Address">
+                        placeholder="Entrer votre adresse Email">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" name="password" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control" name="password" id="exampleInputPassword" placeholder="Entrer votre mot de passe">
                     </div>
                     
                     <div class="form-group">
@@ -60,6 +58,8 @@
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
   <script src="{{ asset('js/ruang-admin.min.js') }}"></script>
+  <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
 </body>
 
 </html>

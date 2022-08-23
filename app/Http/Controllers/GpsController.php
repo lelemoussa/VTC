@@ -77,8 +77,8 @@ class GpsController extends Controller
     public function edit($gpss)
     {
         $gps = gps::find($gpss);
-        //dd($gps);
-        return view('gps.gps_edit', compact("gps"));
+        $clients = Client::all();
+        return view('gps.gps_edit', compact("gps","clients"));
     }
 
     /**

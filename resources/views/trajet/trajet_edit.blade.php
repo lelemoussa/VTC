@@ -1,18 +1,15 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
+<br>
+<div class = "container">
            
-
-
-
 <div id="page-wrapper" style="min-height: 292px;">
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  EDITION D UN trajet </h1>
-
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Modifier trajet</h1>
+<br>
      <div class="panel panel-primary">
 
         @if(session()->has("success"))
@@ -31,58 +28,43 @@
         </ul>
         </div>
         @endif
-         <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('trajet.update', ['trajet'=>$trajet->id]) }}">
-         @csrf
-           
-             <div class="row">
-                 
-             <input type="hidden" name="_method" value="put">
+        <div class="container">
+            
+            <div class="card mb-4">
+            <div class="card-body">
+            <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('trajet.update', ['trajet'=>$trajet->id]) }}">
+                         @csrf
+                         <input type="hidden" name="_method" value="put">
                          
-
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">DEPART</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="depart" id="depart" value="{{$trajet->depart}}">
-                             </div>
-                             <br>
-                         </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">DEPART</label>
+                         <input type="text" class="form-control" id="depart" name="depart" value="{{$trajet->depart}}"
+                            placeholder="Entrer le point de depart">
                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">ARRIVE</label>
-                             <div class="col-sm-8">
-                                 <input type="text" class="form-control" name="arrive" id="arrive" value="{{$trajet->arrive}}">
-                             </div>
-                             <br>
-                         </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">ARRIVE</label>
+                         <input type="text" class="form-control" id="arrive" name="arrive"  value="{{$trajet->arrive}}"
+                            placeholder="Entrer le point d'arrivé">
+                     
+                    </div>
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CLIENT</label>
-                             <div class="col-sm-12">
-                             <select  class="form-control" name="client_id" id="client_id"  >
-                                    @foreach($trajets as $trajet)
-                                        
-                                        <option value="{{ $trajet->client_id }}" >{{ $trajet->client->nom }}</option>
+                  <div class="form-group">
+                    <label for="select2SinglePlaceholder">CLIENT</label>
+                    <select class="select2-single-placeholder form-control" name="client_id" id="client_id">
+                    <option disabled selected value>Sélectionner un client</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{ $client->id }}">{{ $client->nom }}</option>
+                                     @endforeach
+                    </select>
+                  </div>
 
-                                    @endforeach
-                                 </select>
-                             
-                             </div>
-                             <br>
-                         </div>
-                         
-                         <br>
-                         <br>
-                         <div class="form-group">
-                         
-                               <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('trajet.index') }}" class="btn btn-danger">Annuler</a>
-
-                        </div>
-
-           </div> <!--row -->
-
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{{ route('trajet.index') }}" class="btn btn-danger">Annuler</a>
          </form> <!--  /form>-->
+     </div>
+     </div>
 
 
 
@@ -101,4 +83,4 @@
 
     
     <br>
-@endsection
+   @endsection

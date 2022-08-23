@@ -26,8 +26,8 @@
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>NOM</th>
-                        <th>PRENOM</th>
+                        <th>IDENTIFICATION</th>
+                        <!-- <th>PRENOM</th> -->
                         <th>TELEPHONE</th>
                         <th>SOCIETE</th>
                         <th>EMAIL</th>
@@ -40,7 +40,7 @@
     <tr>
       <th scope="row">{{ $loop->index +1 }}</th>
       <td>{{ $client->nom }} {{ $client->prenom }}</td>
-      <td>{{ $client->prenom }}</td>
+      <!-- <td>{{ $client->prenom }}</td> -->
       <td>{{ $client->telephone }}</td>
       <td>{{ $client->societe }}</td>
       <td>{{ $client->email }}</td>

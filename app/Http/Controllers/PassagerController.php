@@ -42,11 +42,11 @@ class PassagerController extends Controller
         $request->validate([
 
             'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
-            'prenom' => ['required','regex:/^[A-Za-z]+$/'],
-            'telephone' => ['required','numeric','min:10','unique:passagers' ],
-            'societe' => ['required' , 'regex:/^[A-Za-z]+$/' ],
+            'prenom' => ['regex:/^[A-Za-z]+$/'],
+            'telephone' => ['regex:/^[0-9]+$/','min:10','unique:passagers' ],
+            'societe' => ['regex:/^[A-Za-z]+$/' ],
             'email' => ['required','email'],
-            'civilite' => ['required' ,'regex:/^[A-Za-z]+$/' ],
+            'civilite' => ['regex:/^[A-Za-z]+$/' ],
             'client_id' => ['required' ],
             
         ]);
@@ -85,8 +85,9 @@ class PassagerController extends Controller
      */
     public function edit(passager $passager)
     {
-        $passagers = passager::all();
-        return view('passager.passager_edit', compact("passager","passagers"));
+        //$passagers = passager::all();
+        $clients = Client::all();
+        return view('passager.passager_edit', compact("passager","clients"));
     }
 
     /**
@@ -101,12 +102,12 @@ class PassagerController extends Controller
         $request->validate([
 
             'nom' => ['required', 'regex:/^[A-Za-z]+$/'],
-            'prenom' => ['required','regex:/^[A-Za-z]+$/'],
-            'telephone' => ['required','numeric','min:10'],
-            'societe' => ['required' , 'regex:/^[A-Za-z]+$/' ],
+            'prenom' => ['regex:/^[A-Za-z]+$/'],
+            'telephone' => ['regex:/^[0-9]+$/','min:10' ],
+            'societe' => ['regex:/^[A-Za-z]+$/' ],
             'email' => ['required','email'],
-            'civilite' => ['required' ,'regex:/^[A-Za-z]+$/' ],
-            'client_id' => ['required' , 'integer' ],
+            'civilite' => ['regex:/^[A-Za-z]+$/' ],
+            'client_id' => ['required' ],
             
         ]);
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -26,9 +26,9 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ route('login') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>ACCEUIL</span></a>
+          <span>Tableau de bord</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -82,22 +82,6 @@
         </div>
       </li>
 
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTrajet" aria-expanded="true"
-          aria-controls="collapseTrajet">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Trajets</span>
-        </a>
-        <div id="collapseTrajet" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Trajets</h6>
-            <a class="collapse-item" href="{{ route('trajet.create') }}">Créer un Trajet</a>
-            <a class="collapse-item" href="{{ route('trajet.index') }}">Listes des Trajets</a>
-          </div>
-        </div>
-      </li>
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">
@@ -114,6 +98,22 @@
         </div>
       </li>
 
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTrajet" aria-expanded="true"
+          aria-controls="collapseTrajet">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Trajets</span>
+        </a>
+        <div id="collapseTrajet" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Trajets</h6>
+            <a class="collapse-item" href="{{ route('trajet.create') }}">Créer un Trajet</a>
+            <a class="collapse-item" href="{{ route('trajet.index') }}">Listes des Trajets</a>
+          </div>
+        </div>
+      </li>
 
       <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGps" aria-expanded="true"
@@ -318,10 +318,10 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <!-- <a class="dropdown-item" href="{{ route('register') }}">
+                 <a class="dropdown-item" href="{{ route('register') }}">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Créer un compte
-                </a> -->
+                </a> 
                 <div class="dropdown-divider"></div>
                 <form class="dropdown-item" action="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal" method="POST">
                   @csrf                  
@@ -332,7 +332,7 @@
           </ul>
         </nav>
         <!-- Topbar -->
-
+         
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
         @yield('content')

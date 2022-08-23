@@ -77,8 +77,9 @@ class TrajetController extends Controller
      */
     public function edit(Trajet $trajet)
     {
-        $trajets = Trajet::all();
-        return view('trajet.trajet_edit', compact("trajet","trajets"));
+        //$trajets = Trajet::all();
+        $clients = Client::all();
+        return view('trajet.trajet_edit', compact("trajet","clients"));
     }
 
     /**

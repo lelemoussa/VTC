@@ -11,7 +11,7 @@
   <title>VTC - Dashboard</title>
   <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">   
 </head>
 
 <body id="page-top">
@@ -137,7 +137,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ route('course.create') }}">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Creer une COURSE</span>
+          <span>Créer une COURSE</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -332,7 +332,7 @@
           </ul>
         </nav>
         <!-- Topbar -->
-         
+        
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
         @yield('content')
@@ -364,6 +364,9 @@
   <script src="{{ asset('js/ruang-admin.min.js') }}"></script>
   <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
   <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>  
+
+  
+
 </body>
 
 </html>

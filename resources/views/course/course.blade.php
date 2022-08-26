@@ -1,18 +1,15 @@
 @extends('templete.layout')
 
 @section('content')
-    <br>
-    <div class = "container ">
+<br>
+<div class = "container">
            
-
-
-
 <div id="page-wrapper" style="min-height: 292px;">
 
 <div class="row">
  <div class="col-lg-12 col-md-12">
-     <h1 align = "center" class=" bg-primary titre-contact">  AJOUTER UN NOUVELLE COURSE </h1>
-
+ <h1 class="h3 mb-0 text-gray-800 text-primary">Ajouter course</h1>
+<br>
      <div class="panel panel-primary">
 
         @if(session()->has("success"))
@@ -31,77 +28,62 @@
         </ul>
         </div>
         @endif
+        <div class="container">
+            
+            <div class="card mb-4">
+            <div class="card-body">
          <form class="form-horizontal" data-toggle="validator"  role="form"  method="POST" action="{{ route('course.store') }}">
          @csrf
            
-             <div class="row">
-                 
-             
-                         
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">DATE</label>
+                         <input type="date" class="form-control" id="date" name="date"
+                            placeholder="Entrer le point de depart">
+                     
+                    </div>
 
-                         <div class="form-group">
-                         
-                             <label  class=" col-sm-4 control-label">DATE</label>
-                             <div class="col-sm-12">
-                                 <input type="date" class="form-control" name="date" id="date" >
-                             </div>
-                             <br>
-                         </div>
-                    
-
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">CHAUFFEUR</label>
-                             <div class="col-sm-12">
-                                 <select  class="form-control" name="chauffeur_id" id="chauffeur_id"  >
+                    <div class="form-group">
+                    <label for="select2SinglePlaceholder">CHAUFFEUR</label>
+                    <select class="select2-single-placeholder form-control" name="chauffeur_id" id="chauffeur_id">
+                    <option disabled selected value>Sélectionner un chauffeur</option>
                                     @foreach($chauffeurs as $chauffeur)
                                         <option value=""></option>
                                         <option value="{{ $chauffeur->id }}">{{ $chauffeur->nom }}</option>
 
                                     @endforeach
-                                 </select>
-                             </div>
-                             <br>
-                         </div>
+                    </select>
+                  </div>
+                    
 
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">VOITURE</label>
-                             <div class="col-sm-12">
-                                 <select  class="form-control" name="voiture_id" id="voiture_id"  >
+                    <div class="form-group">
+                    <label for="select2SinglePlaceholder">VOITURE</label>
+                    <select class="select2-single-placeholder form-control" name="voiture_id" id="voiture_id">
+                    <option disabled selected value>Sélectionner une voiture</option>
                                     @foreach($voitures as $voiture)
                                         <option value=""></option>
                                         <option value="{{ $voiture->id }}">{{ $voiture->marque }}</option>
 
                                     @endforeach
-                                 </select>
-                             </div>
-                             <br>
-                         </div>
-                      
-                         <div class="form-group">
-                             <label  class=" col-sm-4 control-label">Passager</label>
-                             <div class="col-sm-12">
-                                 <select  class="form-control" name="passager_id" id="passager_id"  >
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="select2SinglePlaceholder">PASSAGER</label>
+                    <select class="select2-single-placeholder form-control" name="passager_id" id="passager_id">
+                    <option disabled selected value>Sélectionner un passager</option>
                                     @foreach($passagers as $passager)
                                         <option value=""></option>
                                         <option value="{{ $passager->id }}">{{ $passager->nom }}</option>
 
                                     @endforeach
-                                 </select>
-                             </div>
-                             <br>
-                         </div>
-                         
-                       
-                         <div class="form-group">
-                         
-                               <button type="submit" class="btn btn-warning" name="enregistrer">Enregistrer </button>
-                               <a href="{{ route('course.index') }}" class="btn btn-danger">Annuler</a>
+                    </select>
+                  </div>
 
-                        </div>
-
-           </div> <!--row -->
-
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{{ route('course.index') }}" class="btn btn-danger">Annuler</a>
          </form> <!--  /form>-->
+     </div>
+     </div>
 
 
 

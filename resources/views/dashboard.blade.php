@@ -81,7 +81,7 @@
                       <div class="text-xs font-weight-bold text-uppercase mb-1">PASSAGERS</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $passagers }}</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> </span>
+                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> </span>
                         <span></span>
                       </div>
                     </div>
@@ -93,5 +93,9 @@
               </div>
             </div>
 
+
+            
+              
+            
 
 @endsection

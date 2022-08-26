@@ -43,7 +43,7 @@
                     
                   </form>
                   <div class="text-center">
-                    <a class="font-weight-bold small" href="{{ route('register') }}">Créer un compte</a>
+                    <a class="font-weight-bold small" href="{{ route('password.request') }}">MOT DE PASSE OUBLIER</a>
                   </div>
               </div>
             </div>
